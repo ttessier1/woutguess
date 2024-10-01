@@ -43,7 +43,7 @@
 #include <sys/types.h>
 
 #include "config.h"
-#include <md5.h>
+#include "md5.h"
 
 #include "arc.h"
 

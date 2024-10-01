@@ -47,17 +47,21 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/mman.h>
-#include <netinet/in.h>
+//#include <sys/mman.h>
+//#include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <fcntl.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <math.h>
 #include <string.h>
 
+#include "optarg.h"
+
+
 #include "config.h"
+#include "util.h"
 
 #include "arc.h"
 #include "outguess.h"
@@ -77,8 +81,7 @@ static int steg_errors;
 static int steg_encoded;
 
 static int steg_offset[MAX_SEEK];
-int steg_foil;
-int steg_foilfail;
+
 
 static int steg_count;
 static int steg_mis;
@@ -87,7 +90,7 @@ static int steg_data;
 
 /* Exported variables */
 
-int steg_stat;
+//int steg_stat;
 
 /* format handlers */
 
@@ -116,18 +119,7 @@ get_handler(char *name)
 	return NULL;
 }
 
-void *
-checkedmalloc(size_t n)
-{
-	void *p;
 
-	if (!(p = malloc(n))) {
-		fprintf(stderr, "checkedmalloc: not enough memory\n");
-		exit(1);
-	}
-
-	return p;
-}
 
 /*
  * The error correction might allow us to introduce extra errors to
@@ -353,8 +345,7 @@ steg_retrbyte(bitmap *bitmap, int bits, iterator *iter)
 }
 
 char *
-steg_retrieve(int *len, bitmap *bitmap, iterator *iter, struct arc4_stream *as,
-	      int flags)
+steg_retrieve(int *len, bitmap *bitmap, iterator *iter, struct arc4_stream *as,int flags)
 {
 	u_int32_t n;
 	int i;
@@ -411,9 +402,7 @@ steg_retrieve(int *len, bitmap *bitmap, iterator *iter, struct arc4_stream *as,
 }
 
 int
-steg_find(bitmap *bitmap, iterator *iter, struct arc4_stream *as,
-	  int siter, int siterstart,
-	  u_char *data, int datalen, int flags)
+steg_find(bitmap *bitmap, iterator *iter, struct arc4_stream *as,int siter, int siterstart, u_char *data, int datalen, int flags)
 {
 	int half;
 	int j, i, size = 0;
@@ -677,8 +666,7 @@ decode_data(u_char *encdata, int *len, struct arc4_stream *as, int flags)
 }
 
 int
-do_embed(bitmap *bitmap, u_char *filename, u_char *key, u_int klen,
-	 config *cfg, stegres *result)
+do_embed(bitmap *bitmap, u_char *filename, u_char *key, u_int klen,config *cfg, stegres *result)
 {
 	iterator iter;
 	struct arc4_stream as, tas;

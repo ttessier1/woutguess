@@ -38,6 +38,8 @@
  * intact).
  */
 
+#include "config.h"
+
 #ifndef _ARC_H
 #define _ARC_H
 

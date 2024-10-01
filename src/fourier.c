@@ -31,6 +31,8 @@
 
 #include <stdio.h>
 #include "fourier.h"
+#include "config.h"
+#include "util.h"
 
 /* if depth > 1 */
 int

@@ -31,6 +31,8 @@
 #ifndef _FOURIER_H
 #define _FOURIER_H
 
+#include "config.h"
+
 int split_colors(u_char **pred, u_char **pgreen, u_char **pblue,
 		  u_char *img, int xdim, int ydim, int depth);
 

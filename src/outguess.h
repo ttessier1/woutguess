@@ -98,15 +98,15 @@ u_char *decode_data(u_char *, int *, struct arc4_stream *, int);
 
 struct _iterator;
 
-stegres steg_embed(bitmap *bitmap, struct _iterator *iter,
-		   struct arc4_stream *as, u_char *data, u_int datalen,
-		   u_int16_t seed, int embed);
+stegres steg_embed(bitmap *bitmap, struct _iterator *iter,struct arc4_stream *as, u_char *data, u_int datalen, u_int16_t seed, int embed);
+
 u_int32_t steg_retrbyte(bitmap *bitmap, int bits, struct _iterator *iter);
 
-char *steg_retrieve(int *len, bitmap *bitmap, struct _iterator *iter,
-		    struct arc4_stream *as, int);
+char *steg_retrieve(int *len, bitmap *bitmap, struct _iterator *iter,struct arc4_stream *as, int);
 
 void mmap_file(char *name, u_char **data, int *size);
 void munmap_file(u_char *data, int len);
+
+void* checkedmalloc(size_t n);
 
 #endif /* _OUTGUESS_H */

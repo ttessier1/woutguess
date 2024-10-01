@@ -43,6 +43,7 @@
 #include <string.h>
 
 #include "config.h"
+#include "util.h"
 #include "outguess.h"
 #include "pnm.h"
 #include "jpeg-6b-steg/jpeglib.h"
