@@ -2,6 +2,10 @@
 
 #### outguess - universal steganographic tool
 
+## What is woutguess?
+
+Woutguess is a build configured using CMake instead of make and configured to be able to build on the windows platform for console only. 
+
 ## What is OutGuess?
 
 Outguess is a universal steganographic tool that allows the insertion of hidden
