@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stddef.h>
+
 void * checkedmalloc(size_t n);
 
 #ifndef htonl
