@@ -17,7 +17,7 @@ add_library("fftw" STATIC
 	fni_1.c fni_2.c fni_3.c fni_4.c fni_5.c fni_6.c fni_7.c fni_8.c fni_9.c fni_10.c fni_11.c fni_12.c fni_13.c fni_14.c fni_15.c fni_16.c fni_32.c fni_64.c
 	ftwi_2.c ftwi_3.c ftwi_4.c ftwi_5.c ftwi_6.c ftwi_7.c ftwi_8.c ftwi_9.c ftwi_10.c ftwi_16.c ftwi_32.c ftwi_64.c
 	timer.c config.c planner.c twiddle.c executor.c generic.c fftwnd.c malloc.c wisdom.c wisdomio.c putils.c rader.c fftwf77.c )
-
+target_link_libraries("fftw" PUBLIC m)
 install(TARGETS fftw RUNTIME DESTINATION "${CMAKE_SOURCE_DIR}/lib")
 include(GNUInstallDirs)
 include(CPack)
