@@ -47,6 +47,9 @@ add_executable(histogram histogram.c outguess.h pnm.c pnm.h md5.c md5.h jpg.c jp
 target_link_libraries(woutguess fftw)
 #target_link_libraries(woutguess rfftw)
 target_link_libraries(woutguess jpeg6b)
+IF (!WIN32)
+target_link_libraries("woutguess" PUBLIC m)
+ENDIF()
 
 target_link_libraries(histogram fftw)
 #target_link_libraries(histogram rfftw)
