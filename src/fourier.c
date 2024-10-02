@@ -30,6 +30,7 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 #include "fourier.h"
 #include "config.h"
 #include "util.h"
