@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "util.h"
 #include "config.h"
 
