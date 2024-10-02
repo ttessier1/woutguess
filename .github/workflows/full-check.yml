@@ -15,7 +15,7 @@ jobs:
            ./configure --with-generic-jconfig
            make
            make clean
-           make
+           make 
            sudo make install
            sudo make uninstall
            make distclean
