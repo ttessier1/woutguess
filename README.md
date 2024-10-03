@@ -1,3 +1,4 @@
+![cmake-single-platform-win](https://github.com/ttessier1/woutguess/workflows/cmake-single-platform-win/badge.svg)
 # OutGuess
 
 #### outguess - universal steganographic tool
