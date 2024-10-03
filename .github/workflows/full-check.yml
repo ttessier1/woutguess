@@ -3,6 +3,10 @@ name: full-check
 on: [push, pull_request]
 
 jobs:
+  linux-fftw:
+    runs-on: ubuntu-latest 
+    steps:
+      - run: sudo apt-get install fftw3 fftw3-dev
   build:
 
     runs-on: ubuntu-latest
